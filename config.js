@@ -1,13 +1,13 @@
 // Конфигурация для продакшена
 const config = {
     // Основной домен
-    domain: 'goatmusic.ru',
+    domain: 'web-production-b702c.up.railway.app',
     
     // API endpoints
     api: {
-        baseUrl: 'https://goatmusic.ru',
-        youtube: 'https://goatmusic.ru/api/stream/youtube',
-        spotify: 'https://goatmusic.ru/api/stream/spotify'
+        baseUrl: 'web-production-b702c.up.railway.app',
+        youtube: 'web-production-b702c.up.railway.app/api/stream/youtube',
+        spotify: 'web-production-b702c.up.railway.app/api/stream/spotify'
     },
     
     // Spotify API credentials (замените на свои)
