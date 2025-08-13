@@ -933,7 +933,7 @@ class MusicPlayer {
     async getYouTubeMusicAudioStream(videoId) {
         try {
             // Используем наш сервер для получения аудио потока
-            const response = await fetch(`https://goatmusic.ru/api/stream/youtube/${videoId}`);
+            const response = await fetch(`https://web-production-b702c.up.railway.app/api/stream/youtube/${videoId}`);
             
             if (!response.ok) {
                 throw new Error('Ошибка получения аудио потока');
@@ -943,7 +943,7 @@ class MusicPlayer {
             
             if (data.success) {
                 // Возвращаем прямой URL для стриминга через наш сервер
-                return `https://goatmusic.ru/api/stream/youtube/${videoId}/audio`;
+                return `https://web-production-b702c.up.railway.app/api/stream/youtube/${videoId}/audio`;
             } else {
                 // Fallback на YouTube URL
                 return `https://www.youtube.com/watch?v=${videoId}`;
