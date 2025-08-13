@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальный Плеер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Боковая панель -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>Музыка</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="search">
+                    <i class="fas fa-search"></i>
+                    <span>Поиск</span>
+                </a>
+                <a href="#" class="nav-item" data-section="playlists">
+                    <i class="fas fa-list"></i>
+                    <span>Плейлисты</span>
+                </a>
+                <a href="#" class="nav-item" data-section="favorites">
+                    <i class="fas fa-heart"></i>
+                    <span>Избранное</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <!-- Секция поиска -->
+            <div id="search-section" class="section active">
+                <h1>Поиск музыки</h1>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Введите название песни или исполнителя...">
+                    <button id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="search-results" class="results-grid"></div>
+                
+                <!-- Секция рекомендаций -->
+                <div class="recommendations-section">
+                    <h2>Рекомендации для вас</h2>
+                    <div id="recommendations" class="results-grid"></div>
+                </div>
+            </div>
+
+            <!-- Секция плейлистов -->
+            <div class="section" id="playlists-section">
+                <div class="section-header">
+                    <h2>Мои плейлисты</h2>
+                    <button id="create-playlist-btn" class="btn-primary">
+                        <i class="fas fa-plus"></i> Создать плейлист
+                    </button>
+                </div>
+                
+                <div class="playlists-grid" id="playlists-grid">
+                    <!-- Плейлисты будут здесь -->
+                </div>
+            </div>
+
+            <!-- Секция избранного -->
+            <div class="section" id="favorites-section">
+                <h2>Избранное</h2>
+                <div class="favorites-list" id="favorites-list">
+                    <!-- Избранные треки будут здесь -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Плеер -->
+        <div class="player" id="player">
+            <div class="player-info">
+                <img src="https://via.placeholder.com/60x60/666/fff?text=♪" alt="Album Art" id="album-art">
+                <div class="track-info">
+                    <div class="track-title" id="track-title">Выберите трек</div>
+                    <div class="track-artist" id="track-artist">-</div>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button id="prev-btn" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-btn" class="control-btn play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            
+            <div class="player-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="player-options">
+                <button id="favorite-btn" class="control-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button id="volume-btn" class="control-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальные окна -->
+    <div class="modal" id="playlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Создать плейлист</h3>
+                <button class="close-btn" id="close-playlist-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="playlist-name" placeholder="Название плейлиста">
+                <textarea id="playlist-description" placeholder="Описание (необязательно)"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancel-playlist">Отмена</button>
+                <button class="btn-primary" id="save-playlist">Создать</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
